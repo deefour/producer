@@ -9,10 +9,10 @@ A small class factory.
 
 ## Getting Started
 
-Add Producer to your `composer.json` file and run `composer update`. See [Packagist](https://packagist.org/packages/deefour/producer) for specific versions.
+Run the following to add Producer to your project's `composer.json`. See [Packagist](https://packagist.org/packages/deefour/producer) for specific versions.
 
-```
-"deefour/producer": "~0.1.0"
+```bash
+composer require deefour/producer
 ```
 
 **`>=PHP5.5.0` is required.**
