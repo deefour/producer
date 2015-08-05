@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Collection;
+use Deefour\Producer\Contracts\Producible;
 
 if (!function_exists('resolve')) {
     /**
@@ -9,7 +10,7 @@ if (!function_exists('resolve')) {
      * @param Producer|mixed $object
      * @param string $what
      *
-     * @return Deefour\Producer\Resolvable
+     * @return Producible
      */
     function produce($object, $what)
     {
