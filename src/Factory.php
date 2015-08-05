@@ -9,6 +9,14 @@ use ReflectionClass;
 
 class Factory
 {
+    /**
+     * Generate an FQCN for the '$what' (serializer, presenter, etc...) based on
+     * the name of the Producer object passed.
+     *
+     * @param Producer $object
+     * @param string $what
+     * @return string
+     */
     public function resolve(Producer $object, $what)
     {
       if (method_exists($object, 'resolve')) {
