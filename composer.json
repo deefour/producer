@@ -1,0 +1,36 @@
+{
+  "name": "deefour/producer",
+  "description": "Simple rule-based class resolution",
+  "homepage": "https://github.com/deefour/producer",
+  "keywords": ["producer", "deefour", "class resolution", "laravel"],
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.0",
+    "illuminate/support": "^5.0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^2.2.0",
+    "illuminate/container": "^5.0",
+    "illuminate/support": "^5.0"
+  },
+  "authors": [
+  {
+    "name": "Jason Daly",
+    "email": "jason@deefour.me"
+  }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Deefour\\Producer\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Deefour\\Producer\\Stubs\\": "stub/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  }
+}

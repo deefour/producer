@@ -1,0 +1,5 @@
+suites:
+  presenter_suite:
+    namespace: Deefour\Producer
+    psr4_prefix: Deefour\Producer
+formatter.name: pretty
