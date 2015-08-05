@@ -6,6 +6,7 @@ use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Deefour\Producer\Stubs\Article;
 use Deefour\Producer\Stubs\Serializers\ArticleSerializer;
+use Deefour\Producer\Stubs\Serializers\AnnouncementSerializer;
 use Deefour\Producer\Stubs\Podcast;
 use Deefour\Producer\Exceptions\NotProducibleException;
 
@@ -34,6 +35,11 @@ class FactorySpec extends ObjectBehavior
 
         $serializer->shouldBeAnInstanceOf(ArticleSerializer::class);
         $serializer->producer()->shouldReturn($article);
+    }
+
+    function it_should_allow_custom_producible_instantiation()
+    {
+        $this->make(new Newsletter(), 'serializer')->shouldReturn(AnnouncementSerializer::class)
     }
 
     function it_should_null_on_nonexistent_producible()
