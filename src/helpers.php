@@ -26,7 +26,7 @@ if (!function_exists('resolve')) {
             $objects = [];
 
             foreach ($collection as $item) {
-                $objects[] = resolver($item, $what);
+                $objects[] = produce($item, $what);
             }
 
             if ($object instanceof Collection) {
