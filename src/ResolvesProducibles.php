@@ -26,7 +26,8 @@ trait ResolvesProducibles {
             return $what;
         }
 
-        $reflection = new ReflectionClass($this);
+        $resolvable = method_exists($this, 'resolvable') ? $this->resolvable() : $this;
+        $reflection = new ReflectionClass($resolvable);
         $suffix     = ucfirst($what);
         $namespace  = Pluralizer::plural($suffix);
 
