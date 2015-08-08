@@ -28,7 +28,12 @@ composer require deefour/producer
 
 ## Changelog
 
-#### 0.1.0 - August 4, 2014
+#### 0.1.1 - August 8, 2015
+
+ - Added `ProductionFactory` interface to allow more lenient type-hinting within other packages.
+ - Docblock cleanup.
+
+#### 0.1.0 - August 4, 2015
 
  - Initial release.
 

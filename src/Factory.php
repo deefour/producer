@@ -4,35 +4,28 @@ namespace Deefour\Producer;
 
 use Deefour\Producer\Contracts\Producer;
 use Deefour\Producer\Contracts\Producible;
+use Deefour\Producer\Contracts\ProductionFactory;
 use Deefour\Producer\Exceptions\NotProducibleException;
 use ReflectionClass;
 
-class Factory
+class Factory implements ProductionFactory
 {
     /**
-     * Generate an FQCN for the '$what' (serializer, presenter, etc...) based on
-     * the name of the Producer object passed.
-     *
-     * @param Producer $object
-     * @param string $what
-     * @return string
+     * {@inheritdoc}
      */
     public function resolve(Producer $object, $what)
     {
-      if (method_exists($object, 'resolve')) {
-        return $object->resolve($what);
+      // implement a resolve() method on $object to customize behaviore
+      if (method_exists($object, 'resolve') && ($result = $object->resolve($what)) !== false) {
+          return $result;
       }
 
+      // default behavior
       return get_class($object) . ucfirst($what);
     }
 
     /**
-     * Derives a 'producible' class name for the passed object. Null is returned
-     * if the object fails to be resolved.
-     *
-     * @param Producer $object
-     * @param string $what
-     * @return Producible
+     * {@inheritdoc}
      */
     public function make(Producer $object, $what)
     {
@@ -44,13 +37,7 @@ class Factory
     }
 
     /**
-     * Derives a 'producible' class for the passed object. If the producible does
-     * not exist an exception is thrown.
-     *
-     * @throws NotProducibleException
-     * @param Producer $object
-     * @param string $what
-     * @return Producible
+     * {@inheritdoc}
      */
     public function makeOrFail(Producer $object, $what)
     {
@@ -60,10 +47,12 @@ class Factory
             throw new NotProducibleException($producible, $object);
         }
 
-        if (method_exists($object, 'make')) {
-            return $object->make($producible);
+        // implement a make() method on $object to customize behaviore
+        if (method_exists($object, 'make') && ($result = $object->make($producible)) !== false) {
+            return $result;
         }
 
+         // default behavior
         return new $producible($object);
     }
 }

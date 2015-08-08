@@ -2,7 +2,7 @@
 
 namespace Deefour\Producer;
 
-use Deefour\Producer\Contracts\Resolvable;
+use Deefour\Producer\Contracts\Producible;
 
 trait ProducesClasses
 {
@@ -21,7 +21,7 @@ trait ProducesClasses
      *
      * @param string $method
      * @param array $args
-     * @return Resolvable
+     * @return Producible
      */
     public function __call($method, $args)
     {
