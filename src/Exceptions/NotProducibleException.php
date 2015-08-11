@@ -25,13 +25,14 @@ class NotProducibleException extends \Exception
      *
      * @param string $producible
      * @param Producer $object
+     * @param string $message
      */
-    public function __construct($producible, Producer $object)
+    public function __construct($producible, Producer $object, $message = '')
     {
       $this->producible = $producible;
       $this->object     = $object;
 
-      parent::__construct($this->message());
+      parent::__construct($message ?: $this->message());
     }
 
     /**
