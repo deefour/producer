@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/deefour/producer.svg)](https://travis-ci.org/deefour/producer)
 [![Packagist Version](http://img.shields.io/packagist/v/deefour/producer.svg)](https://packagist.org/packages/deefour/producer)
 [![Code Climate](https://codeclimate.com/github/deefour/producer/badges/gpa.svg)](https://codeclimate.com/github/deefour/producer)
-[![License](https://poser.pugx.org/deefour/producer/license.svg)](https://packagist.org/packages/deefour/producer)
+[![License](https://poser.pugx.org/deefour/producer/license)](https://packagist.org/packages/deefour/producer)
 
 A small class factory.
 
