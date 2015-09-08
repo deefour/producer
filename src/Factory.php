@@ -11,17 +11,37 @@ use ReflectionClass;
 class Factory implements ProductionFactory
 {
     /**
+     * Static cache of resolved class names.
+     *
+     * @var array
+     */
+    static protected $resolutionCache = [];
+
+    /**
      * {@inheritdoc}
      */
     public function resolve(Producer $object, $what)
     {
+      $class = get_class($object);
+
+      if (!array_key_exists($class, static::$resolutionCache)) {
+          static::$resolutionCache[$class] = [];
+      }
+
+      // pull from cache
+      if (isset(static::$resolutionCache[$class][$what])) {
+          return static::$resolutionCache[$class][$what];
+      }
+
       // implement a resolve() method on $object to customize behaviore
       if (method_exists($object, 'resolve') && ($result = $object->resolve($what)) !== false) {
-          return $result;
+          static::$resolutionCache[$class][$what] = $result;
+      } else {
+          static::$resolutionCache[$class][$what] = $class . ucfirst($what);
       }
 
       // default behavior
-      return get_class($object) . ucfirst($what);
+      return static::$resolutionCache[$class][$what];
     }
 
     /**
