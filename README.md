@@ -141,6 +141,10 @@ class Podcast implements Producer
 
 ## Changelog
 
+#### 1.0.0 - October 7, 2015
+
+ - Release 1.0.0.
+
 #### 0.1.1 - August 8, 2015
 
  - Added `ProductionFactory` interface to allow more lenient type-hinting within other packages.
