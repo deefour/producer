@@ -3,7 +3,7 @@
 use Illuminate\Support\Collection;
 use Deefour\Producer\Contracts\Producible;
 
-if (!function_exists('resolve')) {
+if (!function_exists('produce')) {
     /**
      * Instantiate and return a resolvable wrapping the passed object.
      *
