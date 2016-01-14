@@ -11,10 +11,11 @@ class ArticleSerializer implements Producible
 
     public function __construct(Producer $producer)
     {
-      $this->producer = $producer;
+        $this->producer = $producer;
     }
 
-    public function producer() {
+    public function producer()
+    {
         return $this->producer;
     }
 }

@@ -11,9 +11,9 @@ trait ProducesClasses
      */
     public function produce($what)
     {
-      $factory = new Factory();
+        $factory = new Factory();
 
-      return $factory->makeOrFail($this, $what);
+        return $factory->makeOrFail($this, $what);
     }
 
     /**

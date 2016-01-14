@@ -9,5 +9,5 @@ use Illuminate\Support\Fluent;
 
 abstract class Model extends Fluent implements Producer
 {
-  use ProducesClasses, ResolvesProducibles;
+    use ProducesClasses, ResolvesProducibles;
 }

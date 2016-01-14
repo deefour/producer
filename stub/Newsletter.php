@@ -6,7 +6,8 @@ use Deefour\Producer\Stubs\Serializers\AnnouncementSerializer;
 
 class Newsletter extends Model
 {
-    public function resolve($what) {
-      return AnnouncementSerializer::class;
+    public function resolve($what)
+    {
+        return AnnouncementSerializer::class;
     }
 }
