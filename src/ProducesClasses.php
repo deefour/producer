@@ -17,6 +17,14 @@ trait ProducesClasses
     }
 
     /**
+     * @inheritdoc
+     */
+    public function resolvable()
+    {
+        return $this;
+    }
+
+    /**
      * Magic resolver.
      *
      * @param string $method

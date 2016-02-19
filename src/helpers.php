@@ -3,7 +3,7 @@
 use Illuminate\Support\Collection;
 use Deefour\Producer\Contracts\Producible;
 
-if (!function_exists('produce')) {
+if ( ! function_exists('resolve')) {
     /**
      * Instantiate and return a resolvable wrapping the passed object.
      *
@@ -22,7 +22,7 @@ if (!function_exists('produce')) {
             $collection = $object;
         }
 
-        if (!is_null($collection)) {
+        if ( ! is_null($collection)) {
             $objects = [];
 
             foreach ($collection as $item) {

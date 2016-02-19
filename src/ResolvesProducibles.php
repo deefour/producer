@@ -5,7 +5,6 @@ namespace Deefour\Producer;
 use ReflectionClass;
 use Illuminate\Support\Pluralizer;
 
-
 /**
  * A basic resolver. Maps class names like either
  *
@@ -16,7 +15,8 @@ use Illuminate\Support\Pluralizer;
  *
  *  - App\Serializers\PodcastSerializer
  */
-trait ResolvesProducibles {
+trait ResolvesProducibles
+{
     /**
      * @inheritdoc
      */

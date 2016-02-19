@@ -15,4 +15,8 @@ interface Producer
      */
     public function produce($what);
 
+    /**
+     * Determine the source from which producibles should be resolved.
+     */
+    public function resolvable();
 }
