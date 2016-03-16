@@ -22,12 +22,6 @@ class ArticleSpec extends ObjectBehavior
         $this->produce('serializer')->shouldBeAnInstanceOf(ArticleSerializer::class);
     }
 
-    public function it_resolves_via_magic_caller()
-    {
-        $this->producePresenter()->shouldBeAnInstanceOf(ArticlePresenter::class);
-        $this->produceSerializer()->shouldBeAnInstanceOf(ArticleSerializer::class);
-    }
-
     public function it_resolves_custom_classes()
     {
         $this->produce(FeaturedArticlePresenter::class)->shouldBeAnInstanceOf(FeaturedArticlePresenter::class);

@@ -23,22 +23,4 @@ trait ProducesClasses
     {
         return $this;
     }
-
-    /**
-     * Magic resolver.
-     *
-     * @param string $method
-     * @param array $args
-     * @return Producible
-     */
-    public function __call($method, $args)
-    {
-        if (strpos($method, 'produce') === 0) {
-            return $this->produce(
-                lcfirst(preg_replace('/^produce/', '', $method))
-            );
-        }
-
-        return parent::__call($method, $args);
-    }
 }
